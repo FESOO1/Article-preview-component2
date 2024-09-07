@@ -26,10 +26,9 @@ article {
     width: 900px;
     display: grid;
     grid-template-columns: 1.5fr 2fr;
-    overflow: hidden;
     border-radius: 2rem;
     background-color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
 }
 
 /* ARTICLE LEFT */
@@ -42,6 +41,8 @@ article {
 .article-left > img {
     width: 100%;
     object-fit: cover;
+    border-radius: 2rem 0 0 2rem;
+    overflow: hidden;
 }
 
 /* ARTICLE RIGHT */
@@ -55,8 +56,124 @@ article {
 
 .article-right > h2 {
     color: hsl(217, 19%, 35%);
+    font-weight: 700;
 }
 
 .article-right > p {
     color: hsl(214, 17%, 51%);
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-img-and-info {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.account-image {
+    width: 45px;
+    height: 45px;
+}
+
+.account-image > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+.account-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.account-info > h4 {
+    color: hsl(217, 19%, 35%);
+    font-weight: 700;
+}
+
+.account-info > span {
+    color: hsl(214, 17%, 51%);
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.account-share-button {
+    display: flex;
+    position: relative;
+}
+
+.share-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 1.5rem;
+    border: 0;
+    background-color: hsl(210, 46%, 95%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 300ms;
+}
+
+.share-button-svg {
+    transition: color 300ms;
+}
+
+.share-btn-js {
+    background-color: hsl(214, 17%, 51%);
+}
+
+.share-btn-js > svg {
+    color: white;
+}
+
+.share-container {
+    padding: 8px;
+    border-radius: 0.3rem;
+    display: flex;
+    bottom: calc(100% + 25px);
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: hsl(217, 19%, 35%);
+    column-gap: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms; 
+}
+
+.share-links-container-js {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.share-container::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-top: 1vw solid hsl(217, 19%, 35%);
+    border-bottom: 1vw solid transparent;
+    border-left: 2vh solid transparent;
+    border-right: 2vh solid transparent;
+}
+
+.share-container-link {
+    display: flex;
+}
+
+.share-container-link-svg {
+    color: white;
 }
